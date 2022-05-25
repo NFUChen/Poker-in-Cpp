@@ -38,17 +38,19 @@ public:
 
     void update_best_rank()
     {
-        RoyalFlushValidator royal_flush(this->cards);
-        StraightFlushValidator straight_flush(this->cards);
-        FourOfAKindValidator four_of_a_kind(this->cards);
-        FullHouseValidator full_house(this->cards);
-        FlushValidator flush(this->cards);
-        StraightValidator straight(this->cards);
-        ThreeOfAKindValidator three_of_a_kind(this->cards);
-        TwoPairValidator two_pair(this->cards);
-        PairValidator pair(this->cards);
-        HighCardValidator high_card(this->cards);
-        NoCardValidator no_card(this->cards);
+        const std::vector<Card> &card = this->cards;
+
+        RoyalFlushValidator royal_flush(cards);
+        StraightFlushValidator straight_flush(cards);
+        FourOfAKindValidator four_of_a_kind(cards);
+        FullHouseValidator full_house(cards);
+        FlushValidator flush(cards);
+        StraightValidator straight(cards);
+        ThreeOfAKindValidator three_of_a_kind(cards);
+        TwoPairValidator two_pair(cards);
+        PairValidator pair(cards);
+        HighCardValidator high_card(cards);
+        NoCardValidator no_card(cards);
 
         std::vector<Validator *> VALIDATORS = {&royal_flush,
                                                &straight_flush,
